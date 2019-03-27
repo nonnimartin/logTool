@@ -1,12 +1,12 @@
 ### Build Image
-Get Fusion 4.2.0 (or update relevant lines in Dockerfile) and place in working directory with Dockerfile and fusion.properties file
+Get Fusion 4.2.0 (or update relevant lines in Dockerfile) and place in working directory with Dockerfile and fusion.properties file:
+
 `docker build -t <IMAGE_NAME> .`
 
-
 ### Run Container
-Start the container running and map the VMs ports to the local ports you want to use in your environment
-`docker run -dit --privileged=true -p <LOCALPORT>:8764 -p <LOCALPORT>:8983 <IMAGE_NAME>:latest`
+Start the container running and map the VMs ports to the local ports you want to use in your environment:
 
+`docker run -dit --privileged=true -p <LOCAL_PORT>:8764 -p <LOCAL_PORT>:8983 <IMAGE_NAME>:latest`
 
 ### Pause and Unpause Container
 
