@@ -4,7 +4,7 @@ Get Fusion 4.2.0 (or update relevant lines in Dockerfile) and place in working d
 
 ### Run Container
 Start the container running and map the VMs ports to the local ports you want to use in your environment
-`docker run -d -p 8983:<LOCAL_PORT> -p 8764:<LOCAL_PORT> <IMAGE_NAME>:latest`
+`docker run -dit --privileged=true -p <LOCALPORT>:8764 -p <LOCALPORT>:8983 <IMAGE_NAME>:latest`
 
 ### Helpful Commands
 
@@ -16,8 +16,11 @@ Start the container running and map the VMs ports to the local ports you want to
 
 `docker logs <image hash>`
 
+
 #SSH to the Docker container
 If you need to ssh into the Docker VM, use `docker ps` to get the container id,
 and use the command:
 
 `docker exec -it <container_id> /bin/bash`
+
+
