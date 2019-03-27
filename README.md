@@ -10,13 +10,16 @@ Start the container running and map the VMs ports to the local ports you want to
 
 ### Pause and Unpause Container
 
-Get container id
+Get container id:
+
 `docker ps`
 
 To pause container:
+
 `docker pause <container_id>`
 
-To unpause container
+To unpause container:
+
 `docker unpause <container_id>`
 
 
