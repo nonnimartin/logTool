@@ -5,10 +5,12 @@ MAINTAINER j martin <jonthan.martin@lucidworks.com>
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y  software-properties-common && \
-    add-apt-repository ppa:webupd8team/java -y && \
+#    add-apt-repository ppa:webupd8team/java -y && \
+    add-apt-repository ppa:openjdk-r/ppa -y && \
     apt-get update && \
-    echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
-    apt-get install -y oracle-java8-installer && \
+#    echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+#    apt-get install -y oracle-java8-installer && \
+    apt-get install -y openjdk-8-jdk && \
     apt-get clean
 
 RUN apt-get install -y ntp wget zip unzip tar dos2unix nano
@@ -35,4 +37,5 @@ EXPOSE 8763
 EXPOSE 8768
 EXPOSE 9600
 
-CMD ./fusion/4.2.0/bin/fusion start && tail -f /dev/null
+#CMD ./fusion/4.2.0/bin/fusion start && tail -f /dev/null
+CMD tail -f /dev/null
